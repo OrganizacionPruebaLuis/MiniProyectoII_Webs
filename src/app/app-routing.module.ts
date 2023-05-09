@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegistroCitasComponent } from './components/registro-citas/registro-citas.component';
+import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'registro/:id', component: RegistroCitasComponent },
+  { path: '', component: AlojamientosComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

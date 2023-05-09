@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+button {
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listing {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.listing img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.listing h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.listing p {
+    margin-bottom: 10px;
+}
+
+.listing .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5a5f;
+    margin-top: 10px;
+}
+
+.table {
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+
+    .table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        text-indent: -50%;
+        border-bottom: 1px solid #eee;
+    }
+
+    td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
