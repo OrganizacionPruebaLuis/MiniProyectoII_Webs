@@ -108,10 +108,10 @@ export class AlojamientosComponent {
     },
   ];
 
-  reservar(casa: any) {
-    this.router.navigate([`/registro/:${casa.id}`]);
-    let alojamiento = JSON.stringify(casa);
-    localStorage.setItem('casa', alojamiento);
-    console.log(casa);
+  reservar(casaElegida: any) {
+    this.router.navigate([`/registro/:${casaElegida.id}`]);
+    let alojamiento = JSON.stringify(casaElegida);
+    localStorage.setItem('informacionCasaElegida', alojamiento);
+    console.log(casaElegida);
   }
 }

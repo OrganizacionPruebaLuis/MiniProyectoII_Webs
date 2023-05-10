@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { RegistroCitasComponent } from './components/registro-citas/registro-citas.component';
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VerCitasComponent } from './components/ver-citas/ver-citas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlojamientosComponent,
     RegistroCitasComponent,
+    VerCitasComponent,
   ],
   imports: [
     BrowserModule,
