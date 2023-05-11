@@ -31,7 +31,7 @@
     font-family: 'Handlee', cursive;
     text-align: center;
     font-size: 25px;
-    color: #6d9b23 ;
+    color: #1b4707 ;
 
 
   }
@@ -52,4 +52,14 @@
 
   .displayy{
     display: flex;
+  }
+
+  .cardss{
+    background-color:  #90b455; 
+
+  }
+
+  img{
+    width: 450px;
+    height: 450px;
   }
