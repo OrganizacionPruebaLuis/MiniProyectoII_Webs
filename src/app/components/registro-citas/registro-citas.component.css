@@ -19,12 +19,17 @@ h1 {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 30px;
+    font-family: 'Chewy', cursive;
+    color: #6d9b23;
 }
 
 form {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    font-family: 'Handlee', cursive;
+    font-size: 23px;
+
 }
 
 input {
@@ -37,7 +42,7 @@ input {
 }
 
 button {
-    background-color: #ff5a5f;
+    background-color: #6d9b23;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -83,7 +88,31 @@ button {
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+
+
+h5{
+    font-family: 'Chewy', cursive; 
+    font-size: 27px;
+}
+
+p{
+    font-family: 'Handlee', cursive;
+    font-size: 25px;
+    text-align: justify;
+}
+
+a{
+    font-family: 'Chewy', cursive;
+    font-size: 23px;
+    background-color: #6d9b23;
+    border-color: #6d9b23;
+}
+
+.fondoCasa{
+    background-color: #d5f1ca;
+}
+
+/* @media screen and (max-width: 600px) {
 
     .table,
     tbody,
@@ -106,4 +135,17 @@ button {
         text-transform: uppercase;
         font-weight: bold;
     }
-}
+} */
+
+
+.rounded-lg {
+    border-radius: 1rem;
+  }
+  
+  .nav-pills .nav-link {
+    color: #555;
+  }
+  
+  .nav-pills .nav-link.active {
+    color: #fff;
+  }

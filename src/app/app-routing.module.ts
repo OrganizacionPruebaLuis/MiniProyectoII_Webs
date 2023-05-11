@@ -5,14 +5,20 @@ import { AlojamientosComponent } from './components/alojamientos/alojamientos.co
 import { VerCitasComponent } from './components/ver-citas/ver-citas.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { PantallaProgramadoresComponent } from './components/pantalla-programadores/pantalla-programadores.component';
 
 const routes: Routes = [
+
   { path: 'registro/:id', component: RegistroCitasComponent },
   { path: 'alojamientos', component: AlojamientosComponent },
   { path: 'verCitas', component: VerCitasComponent },
   { path: 'home', component: HomeComponent  },
   { path: 'about', component: AboutComponent  },
-  { path: '**', pathMatch: 'full', redirectTo: 'home'}
+  { path: 'programadores', component: PantallaProgramadoresComponent  },
+  { path: '**', pathMatch: 'full', redirectTo: 'home'},
+
+  
+
 ];
 
 @NgModule({

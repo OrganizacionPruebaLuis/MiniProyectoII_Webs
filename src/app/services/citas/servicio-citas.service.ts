@@ -9,11 +9,29 @@ export class ServicioCitasService {
   constructor() {}
 
   guardarInformacion(citaEnviada: any) {
-    this.citas.push(citaEnviada);
-    console.log(this.citas);
-  }
+    let fechasOcupadas = 0;
+    if (this.citas.length > 0) {
+        console.log('Entre para guardar informacion');
+        this.citas.map((cita: any) => {
+            console.log(cita);
+            if (citaEnviada.arriveDate === cita.arriveDate && citaEnviada.casaReservada.id === cita.casaReservada.id) {
+                console.log('Ocupada');
+                fechasOcupadas++;
+            }
+        });
+        if(fechasOcupadas > 0){
+            return false;
+        } else {
+        this.citas.push(citaEnviada);
+            return true;
+        }
+    } else {
+        this.citas.push(citaEnviada);
+        return true;
+    }
+}
 
-  obtenerCitas(){
+  obtenerCitas() {
     return this.citas;
   }
 }

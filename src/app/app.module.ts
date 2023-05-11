@@ -7,6 +7,7 @@ import { RegistroCitasComponent } from './components/registro-citas/registro-cit
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VerCitasComponent } from './components/ver-citas/ver-citas.component';
+import { PantallaProgramadoresComponent } from './components/pantalla-programadores/pantalla-programadores.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -18,6 +19,7 @@ import { DomseguroPipe } from './domseguro.pipe';
     AlojamientosComponent,
     RegistroCitasComponent,
     VerCitasComponent,
+    PantallaProgramadoresComponent,
     NavbarComponent,
     HomeComponent,
     AboutComponent,
