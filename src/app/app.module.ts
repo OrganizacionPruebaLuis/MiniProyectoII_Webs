@@ -11,6 +11,7 @@ import { PantallaProgramadoresComponent } from './components/pantalla-programado
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { DomseguroPipe } from './domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AboutComponent } from './components/about/about.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
+    DomseguroPipe,
   ],
   imports: [
     BrowserModule,
