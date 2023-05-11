@@ -7,9 +7,9 @@ import { RegistroCitasComponent } from './components/registro-citas/registro-cit
 import { AlojamientosComponent } from './components/alojamientos/alojamientos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VerCitasComponent } from './components/ver-citas/ver-citas.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
