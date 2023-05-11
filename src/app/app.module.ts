@@ -8,6 +8,9 @@ import { AlojamientosComponent } from './components/alojamientos/alojamientos.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VerCitasComponent } from './components/ver-citas/ver-citas.component';
 import { PantallaProgramadoresComponent } from './components/pantalla-programadores/pantalla-programadores.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { PantallaProgramadoresComponent } from './components/pantalla-programado
     RegistroCitasComponent,
     VerCitasComponent,
     PantallaProgramadoresComponent,
+    NavbarComponent,
+    HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
