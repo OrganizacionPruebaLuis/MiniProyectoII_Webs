@@ -1,6 +1,16 @@
+<!-- LINKS GOOGLE FONTS -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Chewy&family=Delicious+Handrawn&family=Londrina+Solid:wght@300&family=Loved+by+the+King&display=swap"
+    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap"
+    rel="stylesheet">
+
 <div class="container">
     <h1>Reserva ahora mismo.</h1>
-    <div style="display: flex; flex-direction: row; ">
+    <div style="display: flex; ">
         <div>
             <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
                 <input type="text" formControlName="fullName"
@@ -8,13 +18,22 @@
                     Completo">
                 <input type="text" formControlName="direccion"
                     placeholder="Direccion">
+                <br>
+                <label for="hora">Fecha de llegada:</label>
+                
+
                 <input type="date" formControlName="arriveDate"
                     placeholder="Fecha
                     de
-                    llegada">
-                <input type="date" formControlName="lastDate" placeholder="Fecha
-                    de
-                    salida">
+                    llegada" min="{{today | date:'yyyy-MM-dd'}}">
+                    <div *ngIf = "registerForm.value.arriveDate != ''">
+                        <label for="hora">Fecha de salida:</label>
+                        <input type="date" formControlName="lastDate" placeholder="Fecha
+                            de
+                            salida" min="{{registerForm.value.arriveDate |
+                            date:'yyyy-MM-dd'}}">
+                    </div>
+                
                 <label for="hora">Hora de llegada al establecimiento:</label>
                 <input type="time" id="hora" name="hora" formControlName="hora">
                 <input type="number" formControlName="huespedes"
@@ -26,25 +45,30 @@
                                 <label>
                                     Nombre en la tarjeta:
                                     <input type="text"
-                                        formControlName="cardName">
+                                        formControlName="cardName"
+                                        placeholder="Fernanda Hermosillo">
                                 </label>
                                 <label>
                                     Número de tarjeta:
                                     <input type="text"
-                                        formControlName="cardNumber">
+                                        formControlName="cardNumber"
+                                        placeholder="1234567898765432">
                                 </label>
                                 <label>
                                     Fecha de vencimiento:
                                     <input type="text"
-                                        formControlName="expirationDate">
+                                        formControlName="expirationDate"
+                                        placeholder="06/25">
                                 </label>
                                 <label>
                                     Código de seguridad:
                                     <input type="text"
-                                        formControlName="securityCode">
+                                        formControlName="securityCode"
+                                        placeholder="234">
                                 </label>
                                 <button type="submit"
-                                    [disabled]="registerForm.invalid">Pagar</button>
+                                    [disabled]="registerForm.invalid"
+                                    (click)="showModal()">Pagar</button>
                             </th>
                             <th>
                             </th>
@@ -55,7 +79,10 @@
             </form>
         </div>
         <div>
-            <div class="card" style="width: 18rem;">
+
+
+
+            <div class="card" style="width: 18rem;" class="fondoCasa">
                 <img [src]="alojamientoObject.imageUrl"
                     class="card-img-top" alt="...">
                 <div class="card-body">

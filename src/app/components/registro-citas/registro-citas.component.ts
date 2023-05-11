@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioCitasService } from 'src/app/services/citas/servicio-citas.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro-citas',
@@ -9,6 +10,9 @@ import { ServicioCitasService } from 'src/app/services/citas/servicio-citas.serv
   styleUrls: ['./registro-citas.component.css'],
 })
 export class RegistroCitasComponent {
+  today: Date = new Date();
+  selectedDate: Date | undefined;
+  
   registerForm: FormGroup;
 
   alojamiento: string;
@@ -35,7 +39,7 @@ export class RegistroCitasComponent {
         '',
         [
           Validators.required,
-          Validators.minLength(16),
+          Validators.minLength(2),
           Validators.maxLength(16),
         ],
       ],
@@ -47,13 +51,42 @@ export class RegistroCitasComponent {
     });
   }
 
-  submitForm() {
+  async submitForm()  {
+    let validarRegistro: any;
     console.log(this.registerForm);
-    this.servicioCitas.guardarInformacion(this.registerForm.value);
-    let registroCliente = JSON.stringify(this.registerForm.value);
-    localStorage.setItem('informacionReserva', registroCliente);
-    console.log(registroCliente);
-    this.router.navigate([`/verCitas`]);
-    this.registerForm.reset();
+    validarRegistro = await this.servicioCitas.guardarInformacion(
+      this.registerForm.value
+    );
+    console.log(validarRegistro);
+    
+    if (validarRegistro) {
+      let registroCliente = JSON.stringify(this.registerForm.value);
+      localStorage.setItem('informacionReserva', registroCliente);
+      console.log(registroCliente);
+      localStorage.removeItem('informacionCasaElegida');
+      this.router.navigate([`/verCitas`]);
+      this.registerForm.reset();
+    }else{
+      // alert('fecha en que has guardado info ya esta ocupada');
+      this.showModal2();
+    }
+  }
+
+  showModal() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Reservacion confirmada',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
+
+  showModal2(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'La fecha que seleccionaste se encuentra ocupada',
+      footer: 'Intenta con otra fecha'
+    })
   }
 }
