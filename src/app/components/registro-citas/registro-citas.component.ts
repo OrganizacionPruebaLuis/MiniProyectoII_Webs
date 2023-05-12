@@ -12,7 +12,9 @@ import Swal from 'sweetalert2';
 export class RegistroCitasComponent {
   today: Date = new Date();
   selectedDate: Date | undefined;
-  
+
+  numeroDeCasaReservada = 0;
+
   registerForm: FormGroup;
 
   alojamiento: string;
@@ -51,22 +53,26 @@ export class RegistroCitasComponent {
     });
   }
 
-  async submitForm()  {
+  async submitForm() {
     let validarRegistro: any;
     console.log(this.registerForm);
     validarRegistro = await this.servicioCitas.guardarInformacion(
       this.registerForm.value
     );
     console.log(validarRegistro);
-    
+
     if (validarRegistro) {
       let registroCliente = JSON.stringify(this.registerForm.value);
-      localStorage.setItem('informacionReserva', registroCliente);
+      localStorage.setItem(
+        `${this.registerForm.value.casaReservada.title}${this.registerForm.value.hora}`,
+        registroCliente
+      );
+      this.numeroDeCasaReservada++;
       console.log(registroCliente);
       localStorage.removeItem('informacionCasaElegida');
       this.router.navigate([`/verCitas`]);
       this.registerForm.reset();
-    }else{
+    } else {
       // alert('fecha en que has guardado info ya esta ocupada');
       this.showModal2();
     }
@@ -81,12 +87,12 @@ export class RegistroCitasComponent {
     });
   }
 
-  showModal2(){
+  showModal2() {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
       text: 'La fecha que seleccionaste se encuentra ocupada',
-      footer: 'Intenta con otra fecha'
-    })
+      footer: 'Intenta con otra fecha',
+    });
   }
 }

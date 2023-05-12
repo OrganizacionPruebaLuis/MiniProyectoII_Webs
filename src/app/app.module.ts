@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { DomseguroPipe } from './domseguro.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormCuponComponent } from './components/form-cupon/form-cupon.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     AboutComponent,
     DomseguroPipe,
+    FormCuponComponent,
   ],
   imports: [
     BrowserModule,
