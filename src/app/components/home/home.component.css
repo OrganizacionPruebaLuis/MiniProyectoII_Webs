@@ -21,3 +21,15 @@
         column-count: 5;
     }
 }
+p{
+    text-align: center;
+    font-size: 250%;
+}
+mat-card{
+    background-color: rgb(107, 230, 230);
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
