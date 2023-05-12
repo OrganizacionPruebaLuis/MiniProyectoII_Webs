@@ -2,3 +2,49 @@
     display: flex;
     justify-content: center;
 }
+p{
+    text-align: center;
+    font-size: 250%;
+}
+/*
+.a { border-collapse: separate; }
+.b { border-collapse: collapse; } 
+tr, td, th{ border: 1px solid grey;}*/
+
+.flex-container{
+    display: flex;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+#table1{
+    /*border: 1px solid black;*/
+    /*text-decoration-style: solid;*/
+    margin-left: 40px;
+    padding: 50px;
+}
+#td2{
+    text-align: center;
+    font-size: 25px;
+}
+.btn {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #1EBA90;
+    color: #09B05C;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;   
+}
+  
+.btn1{background-color: transparent; margin: 20px; } 
+.btn1:hover {background-color: #1EBA90;}
+#t3{
+    font-size: 22px;
+}
+b{
+    font-size: 20px;
+}
