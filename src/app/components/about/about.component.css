@@ -110,5 +110,5 @@ html {
   
   thead th, tfoot th, tfoot td {
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
-    border: 3px solid purple;
+    border: 3px solid rgb(13, 0, 128);
   }
