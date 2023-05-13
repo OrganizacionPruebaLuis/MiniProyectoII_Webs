@@ -55,22 +55,29 @@ export class RegistroCitasComponent {
 
   async submitForm() {
     let validarRegistro: any;
-    console.log(this.registerForm);
+    // console.log(this.registerForm);
     validarRegistro = await this.servicioCitas.guardarInformacion(
       this.registerForm.value
     );
-    console.log(validarRegistro);
 
     if (validarRegistro) {
+      let alojamientosReservados = localStorage.getItem("arrayReservaciones");
+      let alojamientosReservadosStorage = JSON.parse(alojamientosReservados!);
+      alojamientosReservadosStorage.push(this.registerForm.value);
+      localStorage.setItem("arrayReservaciones" , JSON.stringify(alojamientosReservadosStorage))
       let registroCliente = JSON.stringify(this.registerForm.value);
+      //------ Aqui se genera un objeto en el localStorage con una llave unica que es generada
+      //mediante el registro que se hace (id y hora) de reserva.
       localStorage.setItem(
-        `${this.registerForm.value.casaReservada.title}${this.registerForm.value.hora}`,
+        `${this.registerForm.value.casaReservada.id}${this.registerForm.value.hora}`,
         registroCliente
       );
+      //----
       this.numeroDeCasaReservada++;
       console.log(registroCliente);
       localStorage.removeItem('informacionCasaElegida');
-      this.router.navigate([`/verCitas`]);
+      // Aqui se le esta pasando el mismo valor del objeto generado en el local storage
+      this.router.navigate([`/verCitas/:${this.registerForm.value.casaReservada.id}${this.registerForm.value.hora}`]);
       this.registerForm.reset();
     } else {
       // alert('fecha en que has guardado info ya esta ocupada');

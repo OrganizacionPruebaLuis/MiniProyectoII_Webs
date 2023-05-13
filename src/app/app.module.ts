@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
+
+    //Aqui estan todos los componentes
     AppComponent,
     AlojamientosComponent,
     RegistroCitasComponent,
