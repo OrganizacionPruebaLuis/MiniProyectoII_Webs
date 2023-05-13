@@ -26,19 +26,16 @@ export class VerCitasComponent implements OnInit {
   ngOnInit() {
     //------
     this.route.paramMap.subscribe((params: Params) => {
-      //aqui seobtiene el valor que se paso por parametro en la ruta
+      //aqui se obtiene el valor que se paso por parametro en la ruta
       const nombreReservaStorage = params['get']('nombreReservaStorage');
-      console.log('El valor del parámetro "id" es:', nombreReservaStorage);
       if (nombreReservaStorage != 'null') {
-        console.log(
-          localStorage.getItem(nombreReservaStorage.substring(1))!
-        );
         
+        // Con el valor obtenido en el parametro de la ruta, hacemos la consulta correspodniente al localStorage
+        // de este valor para asi obtener el objeto del registro que se acaba de realizar y de esta manera, mostrar una alerta 
+        // con esta informacion, para que asi el usuario vea los datos que ingreso anteriormente
         this.alojamientoObjectStorage = JSON.parse(
           localStorage.getItem(nombreReservaStorage.substring(1))!
         );
-        console.log(this.alojamientoObjectStorage);
-        
        this.showModal();
       }
     });
@@ -46,6 +43,9 @@ export class VerCitasComponent implements OnInit {
     this.arrayCitasObect = this.servicioCitas.obtenerCitas();
     let arrayCitas = JSON.stringify(this.arrayCitasObect);
     localStorage.setItem("arrayCitas" , arrayCitas);
+    //MOSTRAR INFORMACION DEL LOCAL STORAGE
+    //Aqui se obtiene la informacion de nuestro array del LocalStorage para asi poder mostrarla 
+    // en la tabla de mis reservaciones
     this.mostrarCitas = JSON.parse(localStorage.getItem("arrayReservaciones")!);
   }
 

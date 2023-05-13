@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+// modulos que se usan para la creacion de formularios y validacion de nuestros campos de input 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServicioCitasService } from 'src/app/services/citas/servicio-citas.service';
@@ -28,6 +30,9 @@ export class RegistroCitasComponent {
     this.alojamiento = localStorage.getItem('informacionCasaElegida')!;
     this.alojamientoObject = JSON.parse(this.alojamiento);
 
+
+    // en esta parte se utilizan los modulos importados para la creacion de formularios
+    //  reactivos y la validacion de este mismo 
     this.registerForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       casaReservada: [this.alojamientoObject],
@@ -56,11 +61,20 @@ export class RegistroCitasComponent {
   async submitForm() {
     let validarRegistro: any;
     // console.log(this.registerForm);
+
+    // Aqui se utiliza el servicio para guardar nuestra cita generada y despues porderla consultar
+    // nuestra variable de validarRegistro nos gusrada el valor que nos regresa nuestra funcion de servicio
+    // si nos devuelve un true, continuamos con el flujo normal de la palicacion, si es false nos muestra un mensaje 
+    // de error
     validarRegistro = await this.servicioCitas.guardarInformacion(
       this.registerForm.value
     );
 
     if (validarRegistro) {
+      //GUARDAR INFORMACION EN EL LOCAL STORAGE
+      //Aqui se guarda la informacion en la variable de alojamientosReservados, donde previamente
+      // se utilizo la funcion parse para obtener los registros ya guardados y de esta manera poder hacer 
+      // un push dentro de nuestro array guardado en el localStorage 
       let alojamientosReservados = localStorage.getItem("arrayReservaciones");
       let alojamientosReservadosStorage = JSON.parse(alojamientosReservados!);
       alojamientosReservadosStorage.push(this.registerForm.value);

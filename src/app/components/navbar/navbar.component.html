@@ -10,9 +10,6 @@
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- En el menu por ejemplo cuando le damos a una opcion del menu utilizamos
-         rutas para cambiar de pagina -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" routerLinkActive="active">
@@ -31,8 +28,10 @@
           <a class="nav-link"[routerLink]="['programadores']">Nosotros</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-
           <a class="nav-link"[routerLink]="['cupon']">¡Consigue un cupon!</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link"[routerLink]="['datos']">Datos</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -42,4 +41,5 @@
       </form>
     </div>
   </div>
+
 </nav>

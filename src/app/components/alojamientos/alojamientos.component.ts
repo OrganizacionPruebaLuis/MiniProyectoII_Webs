@@ -108,6 +108,8 @@ export class AlojamientosComponent {
     },
   ];
 
+  //funcion que se maneja al momento de dar click en el boton de reserva
+  // esto controla la info que se manda a la pantalla de registro
   reservar(casaElegida: any) {
     this.router.navigate([`/registro/:${casaElegida.id}`]);
     let alojamiento = JSON.stringify(casaElegida);

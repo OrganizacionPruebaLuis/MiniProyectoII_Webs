@@ -21,6 +21,9 @@
             </tr>
         </thead>
         <tbody>
+
+             <!-- *ngFor 
+        aqui se utilizo ngfor para ir recorriendo la lista de las citas  -->
             <tr *ngFor="let reservacion of mostrarCitas">
                 <td scope="row">{{reservacion.fullName}}</td>
                 <td>{{reservacion.arriveDate}}</td>
