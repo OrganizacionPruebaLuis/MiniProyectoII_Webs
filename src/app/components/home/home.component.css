@@ -38,9 +38,12 @@ mat-card{
 }
 
 .p22{
+    font-size: 45px;
+    font-weight: bold;
+    color: #6d9b23;
+    margin: 15px;
     font-family: 'Chewy', cursive;
-    font-size: 40px;
-    color: #6d9b23 ;
+
 
   }
 
