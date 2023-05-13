@@ -18,6 +18,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { DatosComponent } from './components/datos/datos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MostrarComponent } from './components/mostrar/mostrar.component';
+
+//servicio
+import { LugaresService } from './shared/lugares.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     DomseguroPipe,
     FormCuponComponent,
-    DatosComponent
+    DatosComponent,
+    MostrarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
