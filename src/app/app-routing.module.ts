@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { PantallaProgramadoresComponent } from './components/pantalla-programadores/pantalla-programadores.component';
 import { FormCuponComponent } from './components/form-cupon/form-cupon.component';
+import { DatosComponent } from './components/datos/datos.component';
 
 const routes: Routes = [
   { path: 'cupon', component: FormCuponComponent },
@@ -14,9 +15,10 @@ const routes: Routes = [
   { path: 'alojamientos', component: AlojamientosComponent },
   { path: 'verCitas', component: VerCitasComponent },
   { path: 'home', component: HomeComponent  },
+  { path: 'datos', component: DatosComponent  },
   { path: 'about', component: AboutComponent  },
   { path: 'programadores', component: PantallaProgramadoresComponent  },
-  { path: '**', pathMatch: 'full', redirectTo: 'home'},
+  { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
