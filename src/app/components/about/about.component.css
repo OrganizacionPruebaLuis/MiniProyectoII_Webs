@@ -136,9 +136,29 @@ mat-grid-tile {
 mat-grid-list {
   width: 100%;
 }
-#t4 {
-  font-size: 20px;
-}
 #t5 {
   font-size: 18px;
+  font-family: "Georgia";
+  color: white;
+}
+h1{
+  color: #ffffff;
+  font-family: "Georgia";
+  
+}
+.ch1{
+  display: flex;
+  justify-content: center;
+  background-color: #90b455;
+}
+.ch11{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(34, 50, 58);
+  width: 500px;
+}
+.contenedor2 {
+  display: flex;
+  justify-content: center;
+  background-color: #90b455;
 }
