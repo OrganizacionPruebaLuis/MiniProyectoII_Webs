@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LugaresService, Lugar } from '../../shared/lugares.service';
 import { Router } from '@angular/router';
-import { MostrarComponent } from '../mostrar/mostrar.component';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

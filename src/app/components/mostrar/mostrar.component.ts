@@ -1,7 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { LugaresService, Lugar } from '../../shared/lugares.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-mostrar',
@@ -16,15 +15,15 @@ export class MostrarComponent implements OnInit {
   datos!: Lugar;
   mensaje!: string;
 
-  constructor(public servicio: LugaresService, private router: ActivatedRoute){
+  constructor(public servicio: LugaresService, private router: ActivatedRoute, private route: Router){
     this.lugares=this.servicio.getLugar();
   }
 
-  ver(){
-    this.router.params.subscribe(params => {
-      this.datos = params['buscar'];
-    })
-
+  reservar(casaElegida: any) {
+    this.route.navigate([`/registro/:${casaElegida.id}`]);
+    let alojamiento = JSON.stringify(casaElegida);
+    localStorage.setItem('informacionCasaElegida', alojamiento);
+    console.log(casaElegida);
   }
 
 
@@ -43,7 +42,9 @@ export class MostrarComponent implements OnInit {
       //console.log(this.mensaje);
       setTimeout(() => {
         this.mensaje="";
+        this.route.navigate(['home/'])
       }, 2000);
+
     }
   })
   }
