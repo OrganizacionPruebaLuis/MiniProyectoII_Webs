@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MiniProyecto2';
+
+  constructor(){
+    if(localStorage.getItem("arrayReservaciones") === "[]" || !localStorage.getItem("arrayReservaciones")){
+      localStorage.setItem("arrayReservaciones" , "[]");
+    }
+  }
 }
+
+

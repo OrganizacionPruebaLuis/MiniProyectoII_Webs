@@ -20,20 +20,30 @@
                     placeholder="Direccion">
                 <br>
                 <label for="hora">Fecha de llegada:</label>
-                
 
+
+                <!-- Aqui se maneja el uso del calendario
+                {{today | date:'yyyy-MM-dd'}} se utiliza para manejar que no se puedan 
+                seleccionar fechas de dias que ya pasaron  -->
                 <input type="date" formControlName="arriveDate"
                     placeholder="Fecha
                     de
                     llegada" min="{{today | date:'yyyy-MM-dd'}}">
-                    <div *ngIf = "registerForm.value.arriveDate != ''">
-                        <label for="hora">Fecha de salida:</label>
-                        <input type="date" formControlName="lastDate" placeholder="Fecha
-                            de
-                            salida" min="{{registerForm.value.arriveDate |
-                            date:'yyyy-MM-dd'}}">
-                    </div>
-                
+
+                <!-- *ngIf
+                    Si es que el valor de fecha de llegada es valido se habilita el campo de fecha de 
+                    salida para asi asegurar que el usuario llene esos valores necesarios, si no llenas tu valor
+                de llegada, no puedes llenar el valor de salida, mientras no tenga el valor arrivedate no va a mostrar
+                la fecha de salida-->
+                <div *ngIf="registerForm.value.arriveDate != ''">
+                    <label for="hora">Fecha de salida:</label>
+                    <input type="date" formControlName="lastDate"
+                        placeholder="Fecha
+                        de
+                        salida" min="{{registerForm.value.arriveDate |
+                        date:'yyyy-MM-dd'}}">
+                </div>
+
                 <label for="hora">Hora de llegada al establecimiento:</label>
                 <input type="time" id="hora" name="hora" formControlName="hora">
                 <input type="number" formControlName="huespedes"
@@ -67,8 +77,7 @@
                                         placeholder="234">
                                 </label>
                                 <button type="submit"
-                                    [disabled]="registerForm.invalid"
-                                    (click)="showModal()">Pagar</button>
+                                    [disabled]="registerForm.invalid">Pagar</button>
                             </th>
                             <th>
                             </th>
@@ -79,9 +88,6 @@
             </form>
         </div>
         <div>
-
-
-
             <div class="card" style="width: 18rem;" class="fondoCasa">
                 <img [src]="alojamientoObject.imageUrl"
                     class="card-img-top" alt="...">
