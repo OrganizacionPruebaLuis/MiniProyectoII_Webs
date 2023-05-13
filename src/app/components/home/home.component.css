@@ -26,10 +26,34 @@ p{
     font-size: 250%;
 }
 mat-card{
-    background-color: rgb(107, 230, 230);
+    background-color: rgb(135, 196, 120);
+    font-family: 'Chewy', cursive;
+    font-size: 25px;
+    color: #283b08 ;
 }
 
 .contenedor{
     display: flex;
     justify-content: center;
 }
+
+.p22{
+    font-family: 'Chewy', cursive;
+    font-size: 40px;
+    color: #6d9b23 ;
+
+  }
+
+  .tablee{
+    background-color: #d4e7b1;
+  }
+
+  h3{
+    background-color: rgb(142, 168, 137);
+    font-family: 'Chewy', cursive;
+    font-size: 29px;
+    color: #283b08 ;
+    text-align: center;
+    padding: 20px;
+  }
+

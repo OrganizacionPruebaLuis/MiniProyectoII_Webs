@@ -7,10 +7,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./form-cupon.component.css'],
 })
 export class FormCuponComponent {
+  //estas variables controlan y obtienen el valor de los inputs relacionados a estas mismas 
   firstName: string = '';
   lastName: string = '';
   email: string = '';
 
+  //En esta funcion se hacen uso de los valores que se obtuvieron haciendo uso del doble binging entre 
+  // la vista y el ts 
   enviarCupon() {
     if (this.email != '') {
       Swal.fire({

@@ -8,12 +8,13 @@ export class ServicioCitasService {
 
   // esta funcion nos ayuda a validar y guardar citas que no esten previamente ya registradas para que de esta manera
   // despues se pueda mostrar en la tabla de alojamientos
-  
+
   //DATOS PRPORCIONADOS 
   // esta funcion nos proporciona un true o un false si es que la cita es valida o no, para que de esta 
   // manera poder controlar nuestra logica 
   //si nos devuelve un true nos manda a otra pagina sino no 
   guardarInformacion(citaEnviada: any) {
+    // Aqui se obtiene y se valida la informacion en el localStorage si es que hay reservaciones
     if (window.localStorage.getItem('arrayReservaciones') !== '[]') {
       this.citas = JSON.parse(
         window.localStorage.getItem('arrayReservaciones')!

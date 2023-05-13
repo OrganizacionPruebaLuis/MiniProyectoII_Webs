@@ -1,51 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous" async></script>
+              <!-- LINKS GOOGLE FONTS -->
+              <link
+              href="https://fonts.googleapis.com/css2?family=Chewy&family=Delicious+Handrawn&family=Londrina+Solid:wght@300&family=Loved+by+the+King&display=swap"
+              rel="stylesheet">
+          <link
+              href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+              rel="stylesheet">
+          <link
+              href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap"
+              rel="stylesheet">
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <br>
-    <mat-card><p>Airbnb</p></mat-card><!--1 Componente-->
+    <mat-card><p class="p222">StayMate</p></mat-card><!--1 Componente-->
     <br>
+
+    <table class="default tablee" style="display: flex;">
+
+      <tr>
+
+        <td>
+          <div>
+            <img
+              src="../assets/imagenes-home/imagen1.jpg"
+              alt="">
+          </div>
+        </td>
+
+        <td>
+          <p class="p22">
+Los mejores alojamientos se encuentran al alcance de tus manos !
+<br>
+Sistema de reservacion StayMate siempre contigo
+
+          </p>
+        </td>
+
+      </tr>
+
+
+    </table>
+
+
+    <br>
+
+    <h3>¡ ENCUENTRA NUEVOS ALOJAMIENTOS CADA DIA !
+
+    </h3>
+    <br>
+
+
     <div class="card-columns">
-        <div class="card">
-          <img src="../assets/imagenesAlojamientos/alojamiento1.jpg" class="card-img-top" width="" height="300px" alt="...">
-        </div>
-        <div class="card">
-          <img src="../assets/imagenesAlojamientos/alojamiento2.jpg" class="card-img-top" alt="...">
-        </div>
-        <div class="card">
-          <img src="../assets/imagenesAlojamientos/alojamiento3.jpg" class="card-img-top" alt="...">
-        </div>
-        <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento4.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento5.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento11.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento7.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento8.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento9.jpg" class="card-img-top" alt="...">
-          </div>
-          <div class="card">
-            <img src="../assets/imagenesAlojamientos/alojamiento10.jpg" class="card-img-top" alt="...">
-          </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento1.jpg"
+          class="card-img-top" width="" height="300px" alt="...">
       </div>
-      <br> 
-      <div class="contenedor">
-        <a mat-flat-button color="primary" routerLink="/alojamientos" target="_blank">Pag Sig.</a> <!--2 Componente-->
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento2.jpg"
+          class="card-img-top" alt="...">
       </div>
-</body>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento3.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento4.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento5.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento11.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento7.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento8.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento9.jpg"
+          class="card-img-top" alt="...">
+      </div>
+      <div class="card">
+        <img src="../assets/imagenesAlojamientos/alojamiento10.jpg"
+          class="card-img-top" alt="...">
+      </div>
+    </div>
+
+
+
+    <br>
+    <div class="contenedor">
+      <a mat-flat-button color="primary" routerLink="/alojamientos"
+        target="_blank">Pag Sig.</a> <!--2 Componente-->
+    </div>
+  </body>
 </html>
