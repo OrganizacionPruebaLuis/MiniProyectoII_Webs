@@ -21,11 +21,18 @@ input{
 }
 
 button{
-    background-color: #b6e964;
+    background-color: #324613;
     font-weight: bold;
     margin-bottom: 30px;
     font-family: 'Chewy', cursive;
-    color: #6d9b23; 
+    color: #bdc9ab; 
     font-size: 30px;
     border: #466613;
+}
+
+h2{
+    font-family: 'Chewy', cursive;
+    color: #4c720b; 
+    font-size: 33px; 
+    text-align: center;
 }
