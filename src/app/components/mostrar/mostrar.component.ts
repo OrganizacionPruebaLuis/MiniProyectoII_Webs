@@ -38,7 +38,7 @@ export class MostrarComponent implements OnInit {
       this.datos = this.lugares[this.index];
       console.log(this.datos)
     }else{
-      this.mensaje="El lugar no exite!";
+      this.mensaje="El lugar no existe!";
       //console.log(this.mensaje);
       setTimeout(() => {
         this.mensaje="";
