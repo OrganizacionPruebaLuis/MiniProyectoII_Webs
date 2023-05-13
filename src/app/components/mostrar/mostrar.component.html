@@ -1,16 +1,23 @@
- 
-            <div class="card p-3 mt-2"  id="msg">
-              <div class="card-block">
-                  <div  class="card-title" id="msg">
-                      <p>Nombre: {{datos.title}}</p>
-                  </div>
-                  <div  class="text"  id="msg">
-                      <p>Biografia: {{datos.description}}</p>
-                  </div>
-                  <div  class="text"  id="msg">
-                      <p>Casa: {{datos.price}}</p>
-                  </div>
-                  <img [src]="datos.imageUrl" width="50px" height="50px" alt="" class="card-img img-fluid">
-              </div>
-          </div>
-
+<div class="container">
+    <div class="row mt-5">
+    <ng-container *ngIf="index !== -1 else noexiste">
+            <div class="card p-3 mt-2">
+                <div class="card-block">
+                    <div  class="card-title">
+                        <p>Nombre: {{datos.title}}</p>
+                    </div>
+                    <div  class="text">
+                        <p>Biografia: {{datos.description}}</p>
+                    </div>
+                    <div  class="text">
+                        <p>Casa: {{datos.price}}</p>
+                    </div>
+                    <img [src]="datos.imageUrl" width="10px" height="10px" alt="" class="card-img img-fluid">
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #noexiste>
+            <p>{{mensaje}}</p>
+        </ng-template>
+</div>
+</div>
